@@ -1,0 +1,87 @@
+.tituloCima {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titulo {
+    font-weight: 500;
+    font-size: 130%;
+    color: #393e46;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.btnConfig {
+    font-size: 170%;
+}
+
+.imagemTipoPratos {
+    width: 40%;
+    height: 40%;
+}
+
+.btnEndereco {
+    font-size: 17px;
+}
+
+.profile-form {
+    padding: 16px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.profile-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+ion-item {
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+
+ion-label {
+    color: #393e46;
+    font-weight: 600;
+    margin-top: 10%;
+}
+
+ion-input {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --background: white;
+    border-radius: 8px;
+}
+
+.input-item {
+    margin-bottom: 3vh;
+}
+
+.custom {
+    border: 2px solid #35281d1b;
+    border-radius: 10px;
+    margin-bottom: 3vh;
+}
+
+.custom-modal {
+    margin: auto;
+    top: 10%;
+}

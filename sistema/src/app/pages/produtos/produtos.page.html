@@ -1,0 +1,99 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content>
+  <div class="tituloCima">
+    <img class="logo" src="../assets/imagens/logo.png" alt="Logo">
+    <img class="logoTitulo" src="../assets/imagens/logoTitulo.png" alt="Logo Título">
+  </div>
+
+  <!-- Grid de 2x2 para os cards -->
+  <div class="card-grid">
+    <!-- Cards de categorias -->
+    <!-- Card 1 -->
+    <ion-card class="cardTipo cardEsquerdo" routerLink="/ver-mais/Pratos">
+      <ion-card-header class="tipoTexto">
+        Pratos
+      </ion-card-header>
+      <ion-card-content>
+        <img class="imagemTipoPratos" alt="" src="/assets/imagens/tipoPratos.png" />
+      </ion-card-content>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-card>
+
+    <!-- Card 2 -->
+    <ion-card class="cardTipo" routerLink="/ver-mais/Lanches">
+      <ion-card-header class="tipoTexto">
+        Lanches
+      </ion-card-header>
+      <ion-card-content>
+        <img class="imagemTipoLanches" alt="" src="/assets/imagens/tipoLanches.png" />
+      </ion-card-content>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-card>
+
+    <!-- Card 3 -->
+    <ion-card class="cardTipo cardInferior cardEsquerdo" routerLink="/ver-mais/Doces">
+      <ion-card-header class="tipoTexto">
+        Doces
+      </ion-card-header>
+      <ion-card-content>
+        <img class="imagemTipoDoces" alt="" src="/assets/imagens/tipoConfeitaria.png" />
+      </ion-card-content>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-card>
+
+    <!-- Card 4 -->
+    <ion-card class="cardTipo cardInferior" routerLink="/ver-mais/Bebidas">
+      <ion-card-header class="tipoTexto">
+        Bebidas
+      </ion-card-header>
+      <ion-card-content>
+        <img class="imagemTipoBebidas" alt="" src="/assets/imagens/tipoBebidas.png" />
+      </ion-card-content>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-card>
+  </div>
+
+  <!-- Título e botão "Ver mais" -->
+  <div class="header-container">
+    <p class="tituloScroll">Principais Comidas</p>
+    <p class="linkScroll" routerLink="/ver-mais">Ver mais</p>
+  </div>
+
+  <!-- Seção de rolagem horizontal com cards dinâmicos -->
+  <div class="horizontal-scroll">
+    <ion-card *ngFor="let produto of produtos.slice(0, 6)" class="card" [routerLink]="['/produto', produto.id]">
+      <img alt="{{produto.nome}}" src="/assets/imagens/produto.jpeg" />
+      <ion-card-header>
+        <ion-card-title class="cardDescricaoProduto">{{produto.descricao}}</ion-card-title>
+        <ion-card-subtitle class="cardNomeProduto">{{produto.nome}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content class="cardPrecoProduto">
+        R$ {{produto.preco}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Título e botão "Ver mais" -->
+  <div class="header-container2">
+    <p class="tituloList">Outras opções</p>
+    <p class="linkList" routerLink="/ver-mais">Ver mais</p>
+  </div>
+
+  <!-- Listagem vertical de produtos -->
+  <div class="vertical-products">
+    <ion-list>
+      <ion-item *ngFor="let produto of produtos.slice(0, 9)" [routerLink]="['/produto', produto.id]">
+        <ion-thumbnail class="imagemList" slot="start">
+          <img src="/assets/imagens/produto.jpeg" alt="{{ produto.nome }}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ produto.nome }}</h2>
+          <p class="descricao-produto">{{ produto.descricao }}</p>
+          <p class="precoProdutoList">R$ {{ produto.preco }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

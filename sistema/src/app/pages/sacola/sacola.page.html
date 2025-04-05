@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Sacola</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of itens">
+      <ion-item detail>
+        <ion-label>{{item.produto.nome}}</ion-label>
+        <ion-buttons slot="end">
+          <ion-button (click)="decrementar(item)">-</ion-button>
+          <ion-label>{{item.quantidade}}</ion-label>
+          <ion-button (click)="incrementar(item)">+</ion-button>
+        </ion-buttons>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option (click)="excluir(item)" color="danger">Excluir</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-button expand="full" color="danger" (click)="limparSacola()">Limpar Sacola</ion-button>
+  <ion-button expand="full" color="primary" id="open-modal">Continuar</ion-button>
+
+  <!-- MODAL PARA CONFIRMAÇÃO DA COMPRA -->
+  <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="page" class="custom-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Pedido</ion-title>
+          <ion-buttons slot="start"> <!-- Mova o botão Cancelar para o início -->
+            <ion-button (click)="modal.dismiss()">Cancelar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding">
+        <ion-list>
+          <ion-item-sliding *ngFor="let item of itens">
+            <ion-item detail>
+              <ion-label>{{item.produto.nome}}</ion-label>
+              <ion-buttons slot="end">
+                <ion-label>{{item.quantidade}}</ion-label>
+              </ion-buttons>
+            </ion-item>
+          </ion-item-sliding>
+        </ion-list>
+        <form [formGroup]="formGroup" (ngSubmit)="finalizarPedido()">
+          <ion-item>
+            <ion-label position="stacked">CPF</ion-label>
+            <ion-input type="text" formControlName="cpf"></ion-input>
+          </ion-item>
+
+          <ion-button type="submit" expand="block" color="primary" [disabled]="!formGroup.valid">Finalizar Pedido</ion-button>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <!---->
+</ion-content>

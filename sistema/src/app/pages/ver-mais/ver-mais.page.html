@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/produtos" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{tipoPag}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Listagem vertical de produtos -->
+  <div class="vertical-products">
+    <ion-list>
+      <ion-item *ngFor="let produto of produtos.slice(0, 9)" [routerLink]="['/produto', produto.id]">
+        <ion-thumbnail class="imagemList" slot="start">
+          <img src="/assets/imagens/produto.jpeg" alt="{{ produto.nome }}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ produto.nome }}</h2>
+          <p class="descricao-produto">{{ produto.descricao }}</p>
+          <p class="precoProdutoList">R$ {{ produto.preco }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

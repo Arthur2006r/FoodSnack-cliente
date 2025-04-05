@@ -1,0 +1,26 @@
+.vertical-products {
+    margin-top: 2vh;
+}
+
+.descricao-produto {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.imagemList {
+    height: 7vh;
+    width: 20vw;
+}
+
+ion-thumbnail img {
+    border-radius: 8px;
+}
+
+.precoProdutoList {
+    color: rgb(0, 164, 11);
+    font-size: 13px;
+    font-weight: 300;
+}

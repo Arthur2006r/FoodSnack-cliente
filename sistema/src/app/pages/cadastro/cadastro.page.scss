@@ -1,0 +1,114 @@
+.br {
+    margin-top: 3vh;
+}
+
+.custom {
+    border: 2px solid #35281d1b;
+    border-radius: 10px;
+}
+
+.custom:hover {
+    border: 2px solid #fd8f47;
+}
+
+.erro-validacao {
+    color: red;
+    font-size: 12px;
+}
+
+.iconLockClosed {
+    color: #35281d7a;
+}
+
+.ion-content {
+    background-color: #dc5802;
+}
+
+.item1 {
+    margin-bottom: 10%;
+}
+
+.itemC {
+    margin-bottom: 6%;
+}
+
+.itemC2 {
+    margin-bottom: 3%;
+}
+
+#caixaLogin {
+    margin-left: 1%;
+    margin-top: -5%;
+    width: 96%;
+}
+
+#caixaLogin ion-input {
+    border-radius: 15px;
+}
+
+#corpoLogin {
+    background-color: #f6f6f6;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.525);
+    padding: 4%;
+    width: 100%;
+}
+
+.linha {
+    border-top: 1px solid #1515169a;
+    margin-left: 28%;
+    width: 72%;
+    position: relative;
+    top: -10px;
+}
+
+.linkLogin {
+    color: #fd8f47;
+    text-decoration: none;
+}
+
+.texto1 {
+    color: #393e46;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.texto2 {
+    color: rgba(0, 0, 0, 0.468);
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: -2vh;
+}
+
+.texto3 {
+    color: #1515169a;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: -0.1%;
+    position: relative;
+    display: inline-block;
+}
+
+.textoCaixa {
+    text-align: center;
+}
+
+.textoLogin {
+    color: #393e4692;
+    font-size: 13px;
+    font-weight: 100;
+    text-align: center;
+}
+
+ion-grid {
+    padding: 0 !important;
+}
+
+ion-label {
+    color: #393e46;
+    font-weight: 600;
+}
+
+ion-row {
+    margin-top: 3%;
+}

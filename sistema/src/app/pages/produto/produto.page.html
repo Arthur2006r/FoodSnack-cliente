@@ -1,0 +1,39 @@
+<ion-header>
+  <div id="topo">
+    <div id="caixaBotaoVoltar">
+      <ion-buttons slot="start">
+        <ion-back-button class="botaoVoltar" defaultHref="/produtos" text=""></ion-back-button>
+      </ion-buttons>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-text>
+    <p class="nomeProduto">{{produto.nome}}</p>
+  </ion-text>
+  <ion-text>
+    <p class="descricaoProduto">{{produto.descricao}}</p>
+  </ion-text>
+  <ion-text>
+    <p class="precoProduto">R$ {{produto.preco}}</p>
+  </ion-text>
+</ion-content>
+
+<ion-footer translucent={true}>
+  <ion-toolbar class="botaoAadicionarASacola">
+    <ion-buttons class="btQuantidade" slot="start">
+      <ion-button (click)="decrementar()">
+        <ion-icon name="remove-outline"></ion-icon>
+      </ion-button>
+      <ion-label>{{ quantidade }}</ion-label>
+      <ion-button (click)="incrementar()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-button slot="end" color="primary" (click)="adicionarASacola()">
+      Adicionar <ion-text class="valorTotal">R$ {{ valorTotal().toFixed(2).replace(".", ",") }}</ion-text>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

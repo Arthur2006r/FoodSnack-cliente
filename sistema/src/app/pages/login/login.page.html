@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-img src="/assets/imagens/logoSemFundo.png" alt="Logo sem fundo" class="imagem"></ion-img>
+
+  <div id="corpoLogin">
+    <div id="caixaLogin">
+      <ion-text class="textoCaixa">
+        <p class="texto1">Área de Login</p>
+      </ion-text>
+
+      <ion-text class="textoCaixa">
+        <p class="texto2">Insira os dados da sua conta para logar</p>
+      </ion-text>
+
+      <form [formGroup]="formGroup" (ngSubmit)="autenticar()" class="caixaForms">
+        <ion-label position="stacked">Email</ion-label>
+        <ion-item class="custom item1">
+          <ion-input placeholder="Insira aqui" type="text" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-label class="br" position="stacked">Senha</ion-label>
+        <ion-item class="custom">
+          <ion-input placeholder="Insira aqui" type="password" formControlName="senha">
+            <ion-icon class="iconLockClosed" slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+          <ion-button type="submit" expand="block" color="primary" [disabled]="!formGroup.valid" class="botaoEntrar">
+            Entrar
+          </ion-button>
+      </form>
+
+      <p class="textoCadastro br">Ainda não tem uma conta? <a class="linkCadastro" routerLink="/cadastro">Cadastre-se</a> agora!</p>
+    </div>
+
+  </div>
+</ion-content>

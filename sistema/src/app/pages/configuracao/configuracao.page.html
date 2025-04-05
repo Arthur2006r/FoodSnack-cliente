@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/perfil" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Configuração de perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let item of menu" [routerLink]="[item.rota]" detail>
+      <ion-icon slot="start" [md]="item.icone" [color]="item.cor"></ion-icon>
+      <ion-label>{{item.titulo}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
